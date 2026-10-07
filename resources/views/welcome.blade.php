@@ -26,7 +26,7 @@
                 Sistema Académico del Instituto IESTPH
 
             </h1>
-            <p> Programa de Estudio APSTI</p>
+            <p> P                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            rograma de Estudio APSTI</p>
             <p> Alumna: Katia Condor Espinoza</p>
 
             <p class="mt-4 text-gray-600">
