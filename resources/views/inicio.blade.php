@@ -6,7 +6,8 @@
     <title>SISTEMA ACADEMICO</title>
 </head>
 <body>
-    <h1>Sistema Web de Gestión Academico </h1>
-    <p>Bienvenido al Sistema Academico desarrollado con Laravel </p>
+    <h1>{{ $nombreSistema }}</h1>
+    <p>Framework: {{ $framework}} </p>
+    <p>Periodo: {{ $periodo }} </p>
 </body>
 </html>
