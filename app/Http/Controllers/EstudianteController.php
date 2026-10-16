@@ -8,6 +8,12 @@ class EstudianteController extends Controller
 {
     public function index()
     {
-        return view('index');
+        return view('estudiantes.index');
     }
+
+        public function show($id)
+        {
+        return 'estudiantes seleccionado'. $id;
+        }
+
 }
