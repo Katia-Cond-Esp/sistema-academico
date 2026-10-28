@@ -44,20 +44,20 @@ class EstudianteController extends Controller
     // Guardar estudiante en la base de datos
     public function store(Request $request)
     {
-        Estudiante::create([
-            'dni' => $request->dni,
-            'nombre' => $request->nombre,
-            'apellidos' => $request->apellidos,
-            'correo' => $request-> correo,
-            'telefono' => $request->telefono,
-            'fecha_nacimiento' => $request->fecha_nacimiento,
-            'estado' => $request-> estado,
+        $datos = $request->validate([
+            'dni' => requireddni,
+            'nombre' => 'required|string|max:255',
+            'apellidos' => 'required|string|max:255',
+            'correo' => 'required|email|max:255|unique:estudiantes,correo',
+            'telefono' => 'required|string|max:20',
+            'fecha_nacimiento' => 'required|date',
+            'estado' => 'required|in:activo,inactivo',
         ]);
 
-        
+        Estudiante::create($datos);
 
         return redirect()
-            ->route('estudiantes.index');
-            
+            ->route('estudiantes.index')
+            ->with('success', '¡Estudiante registrado correctamente!');
     }
 }
