@@ -50,12 +50,37 @@
                                 </span>
                             </td>
 
+                            
                             <td class="p-4">
-                                <a href="{{ route('estudiantes.show', $estudiante->id) }}"
-                                   class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-                                    Ver detalles
-                                </a>
+                                <div class="flex flex-wrap gap-2">
+
+                                    <a href="{{ route('estudiantes.show', $estudiante->id) }}"
+                                    class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg">
+                                        Ver
+                                    </a>
+
+                                    <a href="{{ route('estudiantes.edit', $estudiante->id) }}"
+                                    class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-2 rounded-lg">
+                                        Editar
+                                    </a>
+
+                                    <form action="{{ route('estudiantes.destroy', $estudiante->id) }}"
+                                        method="POST"
+                                        onsubmit="return confirm('¿Estás seguro de eliminar este estudiante?')">
+
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button type="submit"
+                                                class="bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-lg">
+                                            Eliminar
+                                        </button>
+
+                                    </form>
+
+                                </div>
                             </td>
+
                         </tr>
                     @empty
                         <tr>
